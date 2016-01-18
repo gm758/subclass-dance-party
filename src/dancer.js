@@ -23,3 +23,11 @@ Dancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+Dancer.prototype.turboCharge = function() {
+  this.timeBetweenSteps /= 2;
+}
+
+Dancer.prototype = slowDown = function() {
+  this.timeBetweenSteps *= 2;
+}
