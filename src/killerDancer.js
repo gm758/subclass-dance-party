@@ -42,7 +42,6 @@ KillerDancer.prototype.collisionCheck = function(otherDancers) {
 
   //loop though the dancers arry and check if any of them are within 5px
   for(var i = 0;i<otherDancers.length;i++){
-    console.log(distance(this, otherDancers[i]));
     if(distance(this,otherDancers[i])<50){
       this.collisionAction(otherDancers[i]);
     }

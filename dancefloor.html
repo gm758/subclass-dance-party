@@ -15,7 +15,13 @@
           var dancer = window.dancers[$(this).data('dancer')];
           console.log(dancer);
           dancer.turboCharge();
+        });
+        $(document).on('mouseenter', '.killerDancer', function(){
+          $(this).css({'transform':'rotate(180deg)'});
         });        
+        $(document).on('mouseleave', '.killerDancer', function(){
+          $(this).css({'transform':'rotate(0deg)'});
+        });      
       });
     </script>
   </head>
