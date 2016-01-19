@@ -28,3 +28,19 @@ Dancer.prototype.turboCharge = function(){
   this.timeBetweenSteps/=2;
 };
 
+Dancer.prototype.move = function(newX, newY) {
+  this.top = newY;
+  this.left = newX;
+  setPosition(this.top, this.left);
+};
+
+Dancer.prototype.collisionAction = function(){};
+
+Dancer.prototype.collisionCheck = function(otherDancer) {
+  var distance = function(top1, top2, left1, left2) {
+    return Math.sqrt(Math.pow(top1-top2, 2) + Math.pow(left1-left2));
+  };
+  if (distance(this.top, otherDancer.top, this.left, otherDancer.left)) {
+    this.collisionAction(otherDancer);
+  }
+};
