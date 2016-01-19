@@ -27,3 +27,4 @@ Dancer.prototype.setPosition = function(top, left) {
 Dancer.prototype.turboCharge = function(){
   this.timeBetweenSteps/=2;
 };
+
