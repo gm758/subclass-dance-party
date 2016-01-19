@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  var killerDancerCreated = false;
   $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -20,23 +21,27 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
+    if (dancerMakerFunctionName !== 'KillerDancer' || !killerDancerCreated) {
+      if (dancerMakerFunctionName === 'KillerDancer') {
+        killerDancerCreated = true;
+      }
+      var dancer = new dancerMakerFunction(
+        $("body").height() * Math.random(),
+        $("body").width() * Math.random(),
+        Math.random() * 1000
+      );
+      dancer.$node.attr('data-dancer', window.dancers.length);
+      window.dancers.push(dancer);
 
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    dancer.$node.attr('data-dancer', window.dancers.length);
-    window.dancers.push(dancer);
 
-
-    $('body').append(dancer.$node);
+      $('body').append(dancer.$node);
+      
+    }
   });
   
   $(".lineUp").on("click", function(){
     var currentTop = 5;
     for(var i=0;i<window.dancers.length;i++){
-      console.log(currentTop);
       dancers[i].setPosition(currentTop,5);
       currentTop += 2*parseInt(dancers[i].$node.css('border-width'));
     }

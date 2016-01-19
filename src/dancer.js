@@ -34,7 +34,11 @@ Dancer.prototype.move = function(newX, newY) {
   setPosition(this.top, this.left);
 };
 
-Dancer.prototype.collisionAction = function(){};
+Dancer.prototype.collisionAction = function(otherDancer){
+  if (otherDancer instanceof KillerDancer){
+    this.$node.toggle();
+  }
+};
 
 Dancer.prototype.collisionCheck = function(otherDancer) {
   var distance = function(top1, top2, left1, left2) {
