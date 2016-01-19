@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-image:url('images/beach.jpeg');
+  background-image:url('images/livingRoom.jpg');
   background-size:100%;
   font-size: 18px;
 }
@@ -31,7 +31,8 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.killerDancer{
+.smithDancer, .killerDancer, .philDancer{
   border:0px;
-  height:25%;
+  height:25%;  
 }
+
