@@ -46,5 +46,18 @@ $(document).ready(function() {
       currentTop += 2*parseInt(dancers[i].$node.css('border-width'));
     }
   });
+
+  $(document).on('click', '.dancer', function() {
+    var dancer = window.dancers[$(this).data('dancer')];
+    console.log(dancer);
+    dancer.turboCharge();
+  });
+  $(document).on('mouseenter', '.killerDancer', function(){
+    $(this).css({'transform':'rotate(180deg)'});
+  });        
+  $(document).on('mouseleave', '.killerDancer', function(){
+    $(this).css({'transform':'rotate(0deg)'});
+  }); 
+  
 });
 

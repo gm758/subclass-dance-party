@@ -12,21 +12,6 @@
     <script src="src/smithDancer.js"></script>
     <script src="src/philDancer.js"></script>
 
-    <script>
-      $(document).ready(function() {
-        $(document).on('click', '.dancer', function() {
-          var dancer = window.dancers[$(this).data('dancer')];
-          console.log(dancer);
-          dancer.turboCharge();
-        });
-        $(document).on('mouseenter', '.killerDancer', function(){
-          $(this).css({'transform':'rotate(180deg)'});
-        });        
-        $(document).on('mouseleave', '.killerDancer', function(){
-          $(this).css({'transform':'rotate(0deg)'});
-        });      
-      });
-    </script>
   </head>
   <body>
     <div class="topbar">
